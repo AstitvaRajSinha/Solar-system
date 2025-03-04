@@ -22,7 +22,7 @@ function SolarSystem({ planets }) {
     <>
       {/* Sun */}
       <mesh>
-        <sphereGeometry args={[12, 32, 32]} />
+        <sphereGeometry args={[20, 32, 32]} />
         <meshStandardMaterial map={sunTexture} />
       </mesh>
 
@@ -30,7 +30,7 @@ function SolarSystem({ planets }) {
       {planets.map((planet, index) => (
         <group key={index}>
           {/* Orbit */}
-          <Line points={orbitPoints[index].points} color="white" lineWidth={1} />
+          <Line points={orbitPoints[index].points} color="gray" lineWidth={0.5} />
           {/* Planet */}
           <Planet {...planet} />
         </group>
