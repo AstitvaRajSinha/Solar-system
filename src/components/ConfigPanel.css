@@ -1,0 +1,18 @@
+.config-panel {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .config-item {
+    margin-bottom: 10px;
+  }
+  
+  .config-item input {
+    width: 100%;
+  }
+  

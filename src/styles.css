@@ -1,0 +1,22 @@
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  position: relative;
+}
+
+.config-panel {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 5px;
+  color: white;
+  width: 250px;
+}
+
+.config-item {
+  margin-bottom: 10px;
+}
