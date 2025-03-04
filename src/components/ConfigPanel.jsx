@@ -30,7 +30,7 @@ function ConfigPanel({ planets, setPlanets }) {
           <Typography variant="body2">Speed</Typography>
           <Slider
             min={0.001}
-            max={0.02}
+            max={10}
             step={0.001}
             value={planet.speed}
             onChange={(e, v) => handleChange(index, "speed", v)}

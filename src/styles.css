@@ -1,22 +1,26 @@
 .app-container {
-  width: full;
-  height: 100vh;
-  background-color: black;
-  color: white;
-  position: relative;
-}
-
-.config-panel {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  border-radius: 5px;
-  color: white;
-  width: 250px;
-}
-
-.config-item {
-  margin-bottom: 10px;
-}
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    position: relative;
+  }
+  
+  .config-panel {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  button {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
