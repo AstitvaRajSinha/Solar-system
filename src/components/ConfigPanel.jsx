@@ -1,10 +1,37 @@
 import { Box, Slider, Typography, Button } from "@mui/material";
+import { addDoc, getDocs } from "firebase/firestore";
+import { configsCollection } from "./firebaseConfig";
 
 function ConfigPanel({ planets, setPlanets }) {
+
   const handleChange = (index, field, value) => {
     setPlanets((prev) =>
       prev.map((p, i) => (i === index ? { ...p, [field]: value } : p))
     );
+  };
+
+  const saveConfig = async () => {
+    try {
+      await addDoc(configsCollection, { planets });
+      alert("Configuration saved!");
+    } catch (error) {
+      console.error("Error saving config:", error);
+    }
+  };
+
+  const loadConfig = async () => {
+    try {
+      const snapshot = await getDocs(configsCollection);
+      if (!snapshot.empty) {
+        const data = snapshot.docs[0].data(); // Load the first config
+        setPlanets(data.planets);
+        alert("Configuration loaded!");
+      } else {
+        alert("No configurations found.");
+      }
+    } catch (error) {
+      console.error("Error loading config:", error);
+    }
   };
 
   return (
@@ -37,6 +64,12 @@ function ConfigPanel({ planets, setPlanets }) {
           />
         </Box>
       ))}
+      <Button variant="contained" color="primary" onClick={saveConfig} sx={{ mt: 2 }}>
+        Save Config
+      </Button>
+      <Button variant="contained" color="secondary" onClick={loadConfig} sx={{ mt: 2, ml: 2 }}>
+        Load Config
+      </Button>
     </Box>
   );
 }

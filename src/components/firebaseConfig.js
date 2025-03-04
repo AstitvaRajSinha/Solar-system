@@ -1,23 +1,17 @@
+// src/firebase.js
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
+ apiKey: "AIzaSyCkEnosm26nIdTWslyRQcbjhmod97ofKFs",
+  authDomain: "solar-system-4d894.firebaseapp.com",
+  projectId: "solar-system-4d894",
+  storageBucket: "solar-system-4d894.firebasestorage.app",
+  messagingSenderId: "38071123726",
+  appId: "1:38071123726:web:cc32714bbcae1c3ea1215f",
+  measurementId: "G-HVEC2D50MB"
 };
 
 const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-export const saveConfig = async (planets) => {
-  await addDoc(collection(db, "solarSystems"), { planets });
-};
-
-export const loadConfig = async (setPlanets) => {
-  const snapshot = await getDocs(collection(db, "solarSystems"));
-  if (!snapshot.empty) setPlanets(snapshot.docs[0].data().planets);
-};
+export const db = getFirestore(app);
+export const configsCollection = collection(db, "solarConfigs");
