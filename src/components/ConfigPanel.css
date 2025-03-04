@@ -1,18 +1,18 @@
-.config-panel {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    border-radius: 5px;
-    color: white;
-  }
-  
-  .config-item {
-    margin-bottom: 10px;
-  }
-  
-  .config-item input {
-    width: 100%;
-  }
-  
+/* We can remove most of the CSS since we're using Material UI's styling system */
+.config-panel::-webkit-scrollbar {
+  width: 8px;
+}
+
+.config-panel::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.config-panel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.config-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
