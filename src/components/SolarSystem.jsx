@@ -1,9 +1,12 @@
 import Planet from "./Planet";
 import { useMemo } from "react";
 import { Line } from "@react-three/drei";
+import { useLoader } from "@react-three/fiber";
+import { TextureLoader } from "three";
+
 
 function SolarSystem({ planets }) {
-  // ✅ Compute all orbit points before rendering JSX
+  const sunTexture = useLoader(TextureLoader, "/textures/sun.jpg");
   const orbitPoints = useMemo(() => {
     return planets.map((planet) => {
       let points = [];
@@ -19,8 +22,8 @@ function SolarSystem({ planets }) {
     <>
       {/* Sun */}
       <mesh>
-        <sphereGeometry args={[10, 32, 32]} />
-        <meshStandardMaterial color="yellow" />
+        <sphereGeometry args={[12, 32, 32]} />
+        <meshStandardMaterial map={sunTexture} />
       </mesh>
 
       {/* Orbits & Planets */}
