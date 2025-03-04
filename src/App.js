@@ -3,7 +3,6 @@ import { Canvas, useLoader } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import SolarSystem from "./components/SolarSystem";
 import ConfigPanel from "./components/ConfigPanel";
-import { Container } from "@mui/material";
 import "./styles.css";
 import { TextureLoader } from "three";
 

@@ -5,6 +5,7 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@mediapipe/tasks-vision": "^0.10.21",
     "@mui/material": "^6.4.6",
     "@react-three/drei": "^10.0.3",
     "@react-three/fiber": "^9.0.4",

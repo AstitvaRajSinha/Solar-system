@@ -32,7 +32,7 @@ function ConfigPanel({ planets, setPlanets }) {
   }
 
   const saveConfig = async () => {
-    alert("Saving configuration...")
+    alert("Saving configuration...") 
     try {
       await addDoc(configsCollection, { planets })
       alert("Configuration saved!")
